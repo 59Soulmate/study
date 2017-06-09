@@ -7,10 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    Hello Word!!
-</head>
 <body>
-
+Hello Word!!
 </body>
 </html>
