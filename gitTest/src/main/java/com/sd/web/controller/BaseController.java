@@ -1,5 +1,6 @@
 package com.sd.web.controller;
 
+import com.sd.entity.User;
 import com.sd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,22 +16,16 @@ import java.util.Map;
 @RequestMapping("/front/*")
 public class BaseController {
 
-    Map<String,Object> map=new HashMap<String, Object>();
+    public static Map<String, Object> map = new HashMap<String, Object>();
     @Autowired
     UserService userService;
 
-    @RequestMapping("login.action")
-    public String login(){
-        return "login";
-    }
-
     @RequestMapping("index.action")
-    public String index(String name,String pass){
-//        map.put("name",name);
-//        map.put("pass",pass);
-        if(userService.login(name,pass)){
+    public String index(String name, String pass) {
+        if (userService.login(name, pass)) {
+            User u=(User)map.get("user");
             return "index";
         }
-        return "login";
+        return "redirect:/login.jsp";
     }
 }

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Dream-Login</title>
     <link rel="stylesheet" type="text/css" href="/static/public/css/Login.css"/>
 </head>
 <body>

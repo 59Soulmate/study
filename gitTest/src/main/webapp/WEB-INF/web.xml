@@ -7,7 +7,7 @@
                       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
     <welcome-file-list>
-        <welcome-file>/front/login.action</welcome-file>
+        <welcome-file>/login.jsp</welcome-file>
     </welcome-file-list>
     <display-name>Archetype Created Web Application</display-name>
     <context-param>
