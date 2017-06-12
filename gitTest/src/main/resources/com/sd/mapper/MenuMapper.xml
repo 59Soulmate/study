@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sd.dao.MenuDao">
+    <select id="queryMenuByHome" resultType="com.sd.entity.Menu">
+		select
+		a.m_id,a.m_Name,a.m_Fid,a.m_Fun,a.m_Describe FROM menu a,role
+		b,menu_role c,user_role d,myuser e
+		where a.m_id=c.m_id and
+		b.r_id=c.r_id and d.user_id=e.user_id and
+		e.user_id=#{userid} and m_Fid=#{fid}
+	</select>
+</mapper>
