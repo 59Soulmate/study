@@ -14,6 +14,7 @@
     <script type="text/javascript" src="/static/public/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="/static/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="/static/bootstrap/bootstrap-table.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/bootstrap-table-zh-CN.js"></script>
     <SCRIPT type="text/javascript">
         var i = 0;
         var array = [];
