@@ -35,6 +35,11 @@ public class BaseController {
         return "redirect:/login.jsp";
     }
 
+    @RequestMapping("powerManage.action")
+    public String powerManage() {
+        return "powerManage.jsp";
+    }
+
     @RequestMapping("loadTree.action")
     public
     @ResponseBody
