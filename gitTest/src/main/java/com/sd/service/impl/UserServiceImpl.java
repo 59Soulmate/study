@@ -7,6 +7,7 @@ import com.sd.web.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,5 +26,13 @@ public class UserServiceImpl implements UserService {
             return true;
         }
         return false;
+    }
+
+    public List<User> findUser(int page, int size) {
+        return userDao.findUser(page, size);
+    }
+
+    public Integer getCount(Map<String, Object> map) {
+        return userDao.getCount(map);
     }
 }

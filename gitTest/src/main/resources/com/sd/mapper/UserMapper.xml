@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sd.dao.UserDao">
-	<select id="findUser" resultType="com.sd.entity.User">
-		SELECT * FROM MYUSER
+    <!--查询所有的用户-->
+    <select id="findUser" resultType="com.sd.entity.User">
+		SELECT * FROM MYUSER limit #{page},#{size}
 	</select>
-	<select id="findUserByName" parameterType="String" resultType="com.sd.entity.User">
+    <!--获取表数据总行数-->
+    <select id="getCount" parameterType="map" resultType="Integer">
+		select count(*) from ${tableName} where 1=1 ${str}
+	</select>
+
+    <select id="findUserByName" parameterType="String" resultType="com.sd.entity.User">
 		SELECT * FROM MYUSER WHERE USER_NAME=#{name}
 	</select>
-	
-	<select id="login" resultType="com.sd.entity.User">
+    <!--登录查询-->
+    <select id="login" resultType="com.sd.entity.User">
 		SELECT * FROM MYUSER WHERE USER_NAME=#{name} and user_pass=#{pass}
 	</select>
 </mapper>
