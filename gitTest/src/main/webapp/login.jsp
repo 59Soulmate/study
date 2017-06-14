@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="login">
-    <h1>Login_Dream</h1>
+    <h1>Login_Dream啊啊啊啊</h1>
     <form action="/front/index.action" method="post">
         <input type="text" required="required" placeholder="用户名" name="name" id="name"/>
         <input type="password" required="required" placeholder="密码" name="pass" id="pass"/>
