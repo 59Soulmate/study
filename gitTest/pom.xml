@@ -21,7 +21,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.sd</groupId>
+            <groupId>com.zking</groupId>
             <artifactId>fastJar</artifactId>
             <version>2.0</version>
         </dependency>

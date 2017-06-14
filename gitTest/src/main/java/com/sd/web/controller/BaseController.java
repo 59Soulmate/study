@@ -48,4 +48,6 @@ public class BaseController {
         List<TreeVo> list = menuService.queryMenuByHome(u.getUser_id(), id);
         return list;
     }
+
+
 }

@@ -8,6 +8,13 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://D:/Program Files/MAVEN/repository/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
