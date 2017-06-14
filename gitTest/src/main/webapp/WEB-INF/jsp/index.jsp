@@ -9,11 +9,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="/static/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/static/bootstrap/bootstrap-table.css">
-    <script type="text/javascript" src="/static/public/js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="/static/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/static/bootstrap/bootstrap-table.js"></script>
+        <script type="text/javascript" src="/static/public/js/jquery-1.10.2.min.js"></script>
+
+        <link href="/plugs/Bootstrap/css/bootstrap-table.min.css" rel="stylesheet"/>
+        <script src="/plugs/Bootstrap/js/bootstrap-table.min.js"></script>
+
+        <script src="/plugs/Bootstrap/js/bootstrap-table-zh-CN.min.js"></script>
+
+        <script src="/plugs/Bootstrap/js/bootstrap.js"></script>
+        <link href="/plugs/Bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="/static/bootstrap/bootstrap.css" rel="stylesheet" />
+       <%--导出--%>
+        <script src="/plugs/Bootstrap/js/bootstrap-table-export.js"></script>
+         <script src="/plugs/Bootstrap/js/tableExport.js"></script>
+
+
     <SCRIPT type="text/javascript">
         var i = 0;
         var array = [];
@@ -74,7 +84,7 @@
                 dataType: "json",
                 method: "post",   //请求方式（*）
                 toolbar: "#toolbar",  //工具按钮用哪个容器
-                toolbarAlign: "left",
+                toolbarAlign: "left",				//工具栏对齐方式
                 search: true,    //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
                 showColumns: true,                  //是否显示所有的列
                 showRefresh: true,//是否显示刷新按钮
@@ -85,15 +95,19 @@
                 sortOrder: "asc",   //排序方式
                 sidePagination: "server",  //分页方式：client客户端分页，server服务端分页（*）
                 pageNumber: 1,   //初始化加载第一页，默认第一页
-                pageSize: 10,   //每页的记录行数（*）
-                pageList: [10, 25, 50, 100], //可供选择的每页的行数（*）
+                pageSize: 3,   //每页的记录行数（*）
+                pageList: [3, 25, 50, 100], //可供选择的每页的行数（*）
                 contentType: "application/x-www-form-urlencoded",
                 strictSearch: true,
+                showToggle:true,                    //是否显示详细视图和列表视图的切换按钮
+                minimumCountColumns: 1,             //最少允许的列数
                 clickToSelect: true,  //是否启用点击选中行
                 height: 460,   //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
                 uniqueId: "user_id",   //每一行的唯一标识，一般为主键列
                 cardView: false,   //是否显示详细视图
                 detailView: true,   //是否显示父子表
+                showExport:true,    //导出
+                exportDataType:"basic",  //导出格式basic  all  selected
                 columns: [{
                     checkbox: true
                 }, {
