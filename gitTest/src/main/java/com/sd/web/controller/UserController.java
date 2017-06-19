@@ -20,21 +20,22 @@ import java.util.Map;
 @RequestMapping("/user/*")
 public class UserController {
 
-    Map<String,Object> map=new HashMap<String, Object>();
+    Map<String, Object> map = new HashMap<String, Object>();
     @Autowired
     UserService userService;
 
     @RequestMapping("findUser.action")
-    public @ResponseBody
-    Map<String,Object> findUser(HttpServletRequest request, HttpServletResponse response,Integer offset, Integer limit){
+    public
+    @ResponseBody
+    Map<String, Object> findUser(HttpServletRequest request, HttpServletResponse response, Integer offset, Integer limit) {
         response.setHeader("Access-Control-Allow-Origin", "*");
-        map.put("tableName","MyUser");
-        Map<String,Object> args=request.getParameterMap();
-        List<User> list=userService.findUser(offset,limit);
-        Integer count=userService.getCount(map);
+        map.put("tableName", "MyUser");
+        Map<String, Object> args = request.getParameterMap();
+        List<User> list = userService.findUser(offset, limit);
+        Integer count = userService.getCount(map);
         map.clear();
-        map.put("rows",list);
-        map.put("total",count);
+        map.put("rows", list);
+        map.put("total", count);
         return map;
     }
 }

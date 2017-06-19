@@ -9,19 +9,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-        <script type="text/javascript" src="/static/public/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/static/public/js/jquery-1.10.2.min.js"></script>
 
-        <link href="/plugs/Bootstrap/css/bootstrap-table.min.css" rel="stylesheet"/>
-        <script src="/plugs/Bootstrap/js/bootstrap-table.min.js"></script>
+    <link href="/plugs/Bootstrap/css/bootstrap-table.min.css" rel="stylesheet"/>
+    <script src="/plugs/Bootstrap/js/bootstrap-table.min.js"></script>
 
-        <script src="/plugs/Bootstrap/js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/plugs/Bootstrap/js/bootstrap-table-zh-CN.min.js"></script>
 
-        <script src="/plugs/Bootstrap/js/bootstrap.js"></script>
-        <link href="/plugs/Bootstrap/css/bootstrap.css" rel="stylesheet" />
-        <link href="/static/bootstrap/bootstrap.css" rel="stylesheet" />
-       <%--导出--%>
-        <script src="/plugs/Bootstrap/js/bootstrap-table-export.js"></script>
-         <script src="/plugs/Bootstrap/js/tableExport.js"></script>
+    <script src="/plugs/Bootstrap/js/bootstrap.js"></script>
+    <link href="/plugs/Bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/static/bootstrap/bootstrap.css" rel="stylesheet"/>
+    <%--导出--%>
+    <script src="/plugs/Bootstrap/js/bootstrap-table-export.js"></script>
+    <script src="/plugs/Bootstrap/js/tableExport.js"></script>
 
 
     <SCRIPT type="text/javascript">
@@ -99,15 +99,15 @@
                 pageList: [3, 25, 50, 100], //可供选择的每页的行数（*）
                 contentType: "application/x-www-form-urlencoded",
                 strictSearch: true,
-                showToggle:true,                    //是否显示详细视图和列表视图的切换按钮
+                showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
                 minimumCountColumns: 1,             //最少允许的列数
                 clickToSelect: true,  //是否启用点击选中行
                 height: 460,   //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
                 uniqueId: "user_id",   //每一行的唯一标识，一般为主键列
                 cardView: false,   //是否显示详细视图
                 detailView: true,   //是否显示父子表
-                showExport:true,    //导出
-                exportDataType:"basic",  //导出格式basic  all  selected
+                showExport: true,    //导出
+                exportDataType: "basic",  //导出格式basic  all  selected
                 columns: [{
                     checkbox: true
                 }, {

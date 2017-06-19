@@ -1,15 +1,19 @@
 package com.sd.web.controller;
 
 import com.sd.entity.Menu;
+import com.sd.entity.ShiroToken;
 import com.sd.entity.User;
 import com.sd.service.MenuService;
 import com.sd.service.UserService;
 import com.sd.utils.TreeVo;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,5 +48,18 @@ public class BaseController {
         return list;
     }
 
+    @RequestMapping("/logining.action")
+    public String logining(HttpServletRequest request, String name, String pass) {
+        try {
+            ShiroToken token = new ShiroToken(name, pass);
+            token.setRememberMe(false);
+            SecurityUtils.getSubject().login(token);
+            ShiroToken token2 = (ShiroToken) SecurityUtils.getSubject().getPrincipal();
+            System.out.println(token2.getUsername() + "," + token2.getPswd());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "index";
+    }
 
 }
