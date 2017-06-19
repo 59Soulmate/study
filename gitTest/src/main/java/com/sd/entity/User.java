@@ -1,9 +1,12 @@
 package com.sd.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by sd-kf on 2017/6/9.
  */
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer user_id;
     private String user_name;
     private String user_pass;

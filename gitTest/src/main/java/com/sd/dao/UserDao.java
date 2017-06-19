@@ -15,4 +15,6 @@ public interface UserDao {
     List<User> findUser(@Param("page") int page, @Param("size") int size);
 
     Integer getCount(Map<String, Object> map);
+
+    User findUserByLogin(String username);
 }

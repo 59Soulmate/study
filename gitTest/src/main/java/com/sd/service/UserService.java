@@ -15,4 +15,6 @@ public interface UserService {
     List<User> findUser(int page, int size);
 
     Integer getCount(Map<String, Object> map);
+
+    User findUserByLogin(String username);
 }

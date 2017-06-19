@@ -35,4 +35,8 @@ public class UserServiceImpl implements UserService {
     public Integer getCount(Map<String, Object> map) {
         return userDao.getCount(map);
     }
+
+    public User findUserByLogin(String username) {
+        return userDao.findUserByLogin(username);
+    }
 }
