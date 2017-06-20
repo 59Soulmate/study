@@ -1,6 +1,5 @@
 package com.sd.web.controller;
 
-import com.sd.entity.Menu;
 import com.sd.entity.ShiroToken;
 import com.sd.entity.User;
 import com.sd.service.MenuService;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -31,6 +29,13 @@ public class BaseController {
     @Autowired
     MenuService menuService;
 
+
+    /**
+     * 主页面
+     * @param name
+     * @param pass
+     * @return
+     */
     @RequestMapping("index.action")
     public String index(String name, String pass) {
         if (userService.login(name, pass)) {
@@ -39,6 +44,11 @@ public class BaseController {
         return "redirect:/login.jsp";
     }
 
+    /**
+     * Ztree 树形菜单
+     * @param id
+     * @return
+     */
     @RequestMapping("loadTree.action")
     public
     @ResponseBody
@@ -48,6 +58,13 @@ public class BaseController {
         return list;
     }
 
+    /**
+     * shiro 验证登陆
+     * @param request
+     * @param name
+     * @param pass
+     * @return
+     */
     @RequestMapping("/logining.action")
     public String logining(HttpServletRequest request, String name, String pass) {
         try {
@@ -55,9 +72,13 @@ public class BaseController {
             token.setRememberMe(false);
             SecurityUtils.getSubject().login(token);
             ShiroToken token2 = (ShiroToken) SecurityUtils.getSubject().getPrincipal();
+            User user = userService.findUserByLogin(name);;
+            map.put("user",user);
             System.out.println(token2.getUsername() + "," + token2.getPswd());
         } catch (Exception e) {
+            System.out.println("shiro 验证登陆失败！！！");
             e.printStackTrace();
+            return "redirect:/login.jsp";
         }
         return "index";
     }

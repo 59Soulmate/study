@@ -33,12 +33,12 @@ public class UserRealm extends AuthorizingRealm {
 		SimpleAuthorizationInfo sainfo = new SimpleAuthorizationInfo();
 		Set<String> roles = new HashSet<String>();
 		roles.add("admin");
-//		roles.add("role1");
-		Set<String> permissions = new HashSet<String>();
+		//roles.add("role1");
+		/*Set<String> permissions = new HashSet<String>();
 		permissions.add("add");
 		permissions.add("delete");
+		sainfo.setStringPermissions(permissions);*/
 		sainfo.setRoles(roles);
-		sainfo.setStringPermissions(permissions);
 		return sainfo;
 	}
 
@@ -52,11 +52,11 @@ public class UserRealm extends AuthorizingRealm {
 		if (null == user) {
 			throw new AccountException("username is not exist");
 		} else if (!user.getUser_pass().equals(token.getPswd())) {
-			throw new AccountException("password is not right");
+			throw new AccountException("password is not Error");
 		} else {
 			System.out.println("登录成功" + username);
+			return new SimpleAuthenticationInfo(arg0, user.getUser_pass(), username);
 		}
-		return new SimpleAuthenticationInfo(arg0, user.getUser_pass(), username);
 	}
 
 }
