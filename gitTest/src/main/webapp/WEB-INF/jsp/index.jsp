@@ -51,7 +51,8 @@
                 $.ajax({
                     type: "post",
                     url: "/front/loadTree.action",
-                    data: {id: fid},
+                    data: {id:+
+                            fid},
                     dataType: "json",
                     success: function (data) {
                         i++;
